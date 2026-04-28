@@ -1,4 +1,5 @@
-﻿# Customer Churn Analysis Report
+
+# Customer Churn Analysis Report
 
 ## Business Problem
 
@@ -10,8 +11,6 @@ A telecom provider was experiencing significant customer churn and needed to ide
 
 The objective was to build an end-to-end churn analysis solution using Power BI that transforms raw customer data into actionable insights for reducing churn and protecting recurring revenue.
 
----
-
 ## Data Quality Issues & Solutions
 
 | Issue | Solution |
@@ -21,8 +20,6 @@ The objective was to build an end-to-end churn analysis solution using Power BI 
 | Incorrect data types for tenure, MonthlyCharges, TotalCharges | Converted to numeric formats for accurate aggregation and LTV calculations |
 | Null values in TotalCharges | Replaced nulls with 0 only when MonthlyCharges had a value (indicating new customers) |
 | Logical contradictions (e.g., PhoneService="No" but MultipleLines="Yes") | Fixed to prevent impossible service combinations |
-
----
 
 ## Data Modelling & DAX Measures
 
@@ -42,8 +39,6 @@ The objective was to build an end-to-end churn analysis solution using Power BI 
 2. **Customer Type** (New vs. Existing) — separates early-life churn from long-term satisfaction issues
 3. **Risk Type** (High Risk vs. Normal) — based on month-to-month contracts + low tenure for targeted retention
 
----
-
 ## Dashboard Design
 
 ### Layout: Single-page, KPI-first design
@@ -62,7 +57,11 @@ The objective was to build an end-to-end churn analysis solution using Power BI 
 
 **Theme:** Dark background with contrasting colors for churned vs. retained segments
 
----
+## Dashboard Preview
+
+![Customer Churn Analysis Dashboard](../assets/images/customerDash.png)
+
+Power BI dashboard highlighting churn rate, segment risk, and retention drivers.
 
 ## Key Insights
 
@@ -76,26 +75,20 @@ The objective was to build an end-to-end churn analysis solution using Power BI 
 
 **Impact:** Focusing on this narrow segment yields large improvements in overall churn.
 
----
-
 ### 2. Higher Bills Correlate with Higher Churn
 
 | Customer Segment | Average Monthly Charges |
 |------------------|------------------------|
-| Churned customers | ~5/month |
-| Retained customers | ~0/month |
+| Churned customers | ~74/month |
+| Retained customers | ~61/month |
 
 **Impact:** Pricing and plan-fit review for high-charge, short-tenure customers can reduce churn without discounting the entire base.
-
----
 
 ### 3. Lack of Value-Add Services Signals Churn Risk
 
 - Customers without **Online Security** and **Online Backup** contribute disproportionately to churn
 
 **Impact:** Bundling these services at onboarding increases ARPU and reduces early churn.
-
----
 
 ## Top 3 Recommended Initiatives
 
@@ -114,15 +107,11 @@ The objective was to build an end-to-end churn analysis solution using Power BI 
 - Position add-ons as "starter packs" for new customers
 - Monitor churn differences between bundled and non-bundled cohorts
 
----
-
 ## Dashboard Filters Applied
 
 - **Retained Customers by Risk Type:** "Normal" and "High Risk"
 - **Customer Retention:** Churn = "No"
 - **Churn Customers by Contract:** "Month-To-Month"
-
----
 
 *Report generated for Power BI Customer Churn Analysis Project*
 *Data Source: Kaggle Telco Customer Churn Dataset*
